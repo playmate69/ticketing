@@ -1,3 +1,6 @@
 <?php
 
-echo $param;
+
+\app\DB::go(
+    'SELECT * FROM tickets'
+);
