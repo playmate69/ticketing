@@ -14,11 +14,15 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
+}
+
+::-webkit-scrollbar:not(:hover) {
+    opacity: 0;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #eee;
 }
 
 ::-webkit-scrollbar-thumb {

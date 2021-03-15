@@ -8,7 +8,10 @@
                     <div class="product__thumbnail full">
                         <img :src="product.node.images[0].src" class="full cover--center">
                     </div>
-                    <span class="absolute stick--bottom f--big" style="color:#fff">{{ product.node.title }}</span>
+                    <div class="fluid absolute stretch stick--bottom flex align--center justify--between heading--b-l f--light">
+                        <span class="f--big" style="color:#fff">{{ product.node.title }}</span>
+                        <span class="f--big" style="color:#fff">€{{ product.node.price }}</span>
+                    </div>
                 </div>
             </div>
 

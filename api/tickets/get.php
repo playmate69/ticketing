@@ -9,7 +9,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/front_1.jpg?v=1606385555"
                     ]
-                ]
+                    ],
+                    "price" => "30,00"
             ]
         ],
         [
@@ -19,7 +20,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_5.jpg?v=1606385385"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -29,7 +31,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_2.jpg?v=1606385162"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -39,7 +42,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_2.jpg?v=1606385162"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -49,7 +53,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/front_1.jpg?v=1606385555"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -59,7 +64,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_5.jpg?v=1606385385"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -69,7 +75,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_2.jpg?v=1606385162"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ],
         [
@@ -79,7 +86,8 @@ echo json_encode([
                     [
                         "src" => "https://cdn.shopify.com/s/files/1/2772/6034/products/native_2.jpg?v=1606385162"
                     ]
-                ]
+                ],
+                "price" => "30,00"    
             ]
         ]
     ]

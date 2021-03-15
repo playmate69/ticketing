@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <router-link to="/shop">shop</router-link>
   </div>
 </template>
 
