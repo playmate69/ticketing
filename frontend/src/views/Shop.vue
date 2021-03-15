@@ -3,10 +3,10 @@
         <h1 class="heading--l">Shop</h1>
         <div class="product__grid grid col-2">
 
-            <div v-for="(product, i) in products" :key="i" class="product__grid-item relative">
+            <div v-for="(product, i) in products" :key="i" :style="{ '--delay': i/10 + 's' }" class="product__grid-item relative anim-in-view">
                 <div class="inner absolute full overflow--hidden stick--top stick--bottom flex vertical">
                     <div class="product__thumbnail full">
-                        <img :src="product.node.images[0].originalSrc" class="full cover--center">
+                        <img :src="product.node.images[0].src" class="full cover--center">
                     </div>
                     <span class="absolute stick--bottom f--big" style="color:#fff">{{ product.node.title }}</span>
                 </div>
@@ -25,13 +25,28 @@
             }
         },
         mounted() {
-            this.getProducts()
+            this.getProducts();
+
+            window.onscroll = function() {
+                [].forEach.call( document.querySelectorAll(".product__grid-item"), (product) => {
+                    if ( product.classList.contains("in-view") ) return;
+
+                    if ( (window.scrollY + window.innerHeight ) > product.offsetTop + ( product.offsetHeight/2 ) ) product.classList.add("in-view")
+
+                });
+            }
+
+        },
+        updated() {
+            [].forEach.call( document.querySelectorAll(".product__grid-item"), (product) => {
+                if ( (window.scrollY + window.innerHeight ) > product.offsetTop + ( product.offsetHeight/2 ) ) product.classList.add("in-view")
+            });
         },
         methods: {
             getProducts() {
                 axios
-                    .get( 'https://www.itsallfluff.com/page-data/products/face-oil-2/page-data.json' )
-                    .then( success => this.products = success.data.result.data.allShopifyProduct.edges )
+                    .get( this.$store.state.API + '/tickets' )
+                    .then( success => this.products = success.data.edges )
                     .catch( err => console.error(err.response.status) )
             }
         }
@@ -42,6 +57,7 @@
     .product__grid-item {
         padding-bottom: 100%;
         cursor: pointer;
+        transition-delay: var(--delay) !important;
     }
     
     .product__grid-item .product__thumbnail {
@@ -51,4 +67,14 @@
     .product__grid-item:hover .product__thumbnail {
         transform: scale(1.1)
     }
+
+    .anim-in-view {
+        transition: all .4s ease;
+    }
+
+    .anim-in-view:not(.in-view) {
+        transform: translateY(30%);
+        opacity: 0;    
+    }
+
 </style>
