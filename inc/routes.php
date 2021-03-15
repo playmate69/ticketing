@@ -1,7 +1,13 @@
 <?php
 
 $router->get(
-    '/tickets/:id', 
+    '/tickets', 
     [ 'app\Controller', 'handle' ], 
-    [ './api/tickets.php' ]
+    [ './api/tickets/get.php' ]
+) && die();
+
+$router->post(
+    '/tickets', 
+    [ 'app\Controller', 'handle' ], 
+    [ './api/tickets/order.php' ]
 ) && die();
