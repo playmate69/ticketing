@@ -2,6 +2,9 @@
 
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/inc/controller.php';
+require __DIR__ . '/inc/response.php';
+require __DIR__ . '/inc/connection.php';
+require __DIR__ . '/inc/db.php';
 
 header("Access-Control-Allow-Origin: *");
 

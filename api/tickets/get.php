@@ -1,5 +1,17 @@
 <?php
 
+$result = $db->query([
+    "sql" => "SELECT user_id FROM users",
+    "options" => [
+        "return" => true,
+        "array" => true
+    ]
+])->queries(1, true)["result"];
+
+echo json_encode($result);
+
+die();
+
 echo json_encode([
     "edges" => [
         [
